@@ -67,25 +67,28 @@
         }
 
         function vertical_mid() {
-            var center_screen = (window.innerHeight / 2);
-            var element = document.getElementsByClassName('row');
-            var content_h = content_height(element);
-            var margin_top = center_screen - content_h;
-            element[0].style.marginTop = margin_top + 'px';
-            // document.getElementById('player').style.marginTop = margin_top + 'px';
+            setTimeout(function() {
+                var center_screen = (window.innerHeight / 2);
+                var element = document.getElementsByClassName('row');
+                var content_h = content_height(element);
+                var margin_top = center_screen - content_h;
+                element[0].style.marginTop = margin_top + 'px';
+                
+            }, 200);
         }
 
         function content_height(element) {
             var height = 0;
             for (var key in element) {
-                if(typeof element[key] == 'object'){
+                if (typeof element[key] == 'object') {
                     height += element[key].clientHeight;
                 }
-                
+
             }
-            return height /2;
+            return height / 2;
         }
         addEvent(window, 'load', vertical_mid);
+        addEvent(window, 'orientationchange', vertical_mid);
     </script>
 </body>
 
