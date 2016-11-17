@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">        
+        <style>
+            html{
+                height: 100%;
+            }
+            body{
+                background-image: url(http://banner.synergy-e.com/www/images/bg10.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                height: 100%;
+
+                font-family: helvetica;
+                color: #fff;
+            }      
+            .col-centered{
+                float: none;
+                margin: 0 auto;
+            }
+        </style>
+				
+    </head>
+<body style='cursor:pointer;' onclick="return onBannerClick();">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 text-center" style="margin-top:100px;">
+                    <h1>Hello world</h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled 
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-8 col-centered" style="color:#fff;">
+                    <div style="width: 100%">
+                        {vdo}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function addEvent(node, type, listener) {
+                if (node.addEventListener) {
+                    node.addEventListener(type, listener, false);
+                    return true;
+                } else if (node.attachEvent) {
+                    node['e' + type + listener] = listener;
+                    node[type + listener] = function () {
+                        node['e' + type + listener](window.event);
+                    };
+                    node.attachEvent('on' + type, node[type + listener]);
+                    return true;
+                }
+                return false;
+            }
+            function vertical_mid() {
+                var margin_top = (window.innerHeight / 2) - document.getElementById('player').clientHeight;
+                document.getElementById('player').style.marginTop = margin_top + 'px';
+            }
+//            addEvent(window, 'resize', vertical_mid);
+        </script>
+    </body>
+</html>
